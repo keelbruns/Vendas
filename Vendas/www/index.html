@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
-<body class="fundo">
+<body>
 		<title> Vendas </title>
 	<section>
-		<form method="get" action="#">
+		<form class="principal" method="get" action="#">
 			<legend> Vendas: </legend>
 		</br>
 
@@ -29,14 +29,31 @@
 			<label for="vendedor">Vendedor: </label>
 			<input type="text" name="vendedor" id="vendedor">
 
-			<input class="botao" type="submit" value="OK">
+			<input class="ok" type="submit" value="OK">
 		</form>
 
+		<div class="mensagem">
+ 			<ul>
+ 				<li>Produto: </li>
+ 				<li>Preço: </li>
+ 				<li>Cliente: </li>
+ 				<li>Vendedor: </li>
+ 			</ul>
+ 			<input class="confirmar" type="submit" value="Confirmar">
+ 		</div>
 	</section>
-
 <script src="js/jquery-3.3.1.min.js"></script>
 <script> 
 
+	botao = $(".ok");
+	mensagem = $(".mensagem");
+	principal = $(".principal");
+
+	botao.on("click", function(){
+		mensagem.show();
+		principal.hide();
+
+	});
 
 
 
