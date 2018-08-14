@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vendas</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="fundo">
+	<h2>VENDAS</h2>
+	<h1><span class="min">25</span>:<span class="seg">00</span></h1>
+	<button class="iniciar"> INICIAR </button>	
+	<p><img src="res/tomato.png"></p>
+
+<div class="mensagem">
+ 	<button class="intervalo"> INICIAR INTERVALO </button>
+ 	<button class="continuar"> CONTINUAR </button>
+ </div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script> 
+	var minutos = $("span.min");
+	var segundos = $("span.seg");
+	var iniciar = $("button.iniciar");
+	var intervalo = $("button.intervalo");
+	var fundo = $(".fundo");
+	var parar = $(".button.parar");
+
+	iniciar.on("click", function(){
+		intervalo = setInterval(function(){
+				var minutos_atual = minutos.text();
+				var segundos_atual = segundos.text(); // == $("h1").text();
+
+			if(minutos_atual == 00 && segundos_atual == 00){
+				$(".mensagem").show();
+				clearInterval(intervalo);
+				}
+				else{
+					segundos.text(59);
+					if (segundos_atual != 00) {
+					valor_segundos = parseInt(segundos_atual)-1
+					if(valor_segundos < 10){
+						segundos.text("0"+ valor_segundos)
+					}else{
+						segundos.text(valor_segundos);
+					}
+				} else {
+					if (minutos_atual != 00) {
+					valor_minutos = parseInt(minutos_atual)-1
+					if(valor_minutos < 10){
+						minutos.text("0"+ valor_minutos)
+					}else{
+						minutos.text(valor_minutos);
+					}
+				}
+				}
+				}
+		}, 100);
+		parar.on("click", function(){
+		clearInterval(intervalo);
+		});
+	});
+
+// INTERVALO
+
+	intervalo.on("click", function(){
+		
+		$(".fundo").css("background", "#66CDAA");
+		minutos.text("0" + 5);
+			intervalo = setInterval(function(){
+				var minutos_atual = minutos.text();
+				var segundos_atual = segundos.text(); // == $("h1").text();
+
+			if(minutos_atual == 00 && segundos_atual == 00){
+				clearInterval(intervalo);
+				}
+				else{
+					segundos.text(59);
+					if (segundos_atual != 00) {
+					valor_segundos = parseInt(segundos_atual)-1
+					if(valor_segundos < 10){
+						segundos.text("0"+ valor_segundos)
+					}else{
+						segundos.text(valor_segundos);
+					}
+				} else {
+					if (minutos_atual != 00) {
+					valor_minutos = parseInt(minutos_atual)-1
+					if(valor_minutos < 10){
+						minutos.text("0"+ valor_minutos)
+					}else{
+						minutos.text(valor_minutos);
+					}
+				}
+			}
+				}
+		}, 100);
+	});
+
+/////////////////////////////////
+
+
+	continuar.on("click", function(){
+		intervalo = setInterval(function(){
+				var minutos_atual = minutos.text();
+				var segundos_atual = segundos.text(); // == $("h1").text();
+
+			if(minutos_atual == 00 && segundos_atual == 00){
+				$(".mensagem").show();
+				clearInterval(intervalo);
+				}
+				else{
+					segundos.text(59);
+					if (segundos_atual != 00) {
+					valor_segundos = parseInt(segundos_atual)-1
+					if(valor_segundos < 10){
+						segundos.text("0"+ valor_segundos)
+					}else{
+						segundos.text(valor_segundos);
+					}
+				} else {
+					if (minutos_atual != 00) {
+					valor_minutos = parseInt(minutos_atual)-1
+					if(valor_minutos < 10){
+						minutos.text("0"+ valor_minutos)
+					}else{
+						minutos.text(valor_minutos);
+					}
+				}
+				}
+				}
+		}, 100);
+		parar.on("click", function(){
+		clearInterval(intervalo);
+		});
+	});
+
+
+
+</script>
+</body>
+</html>

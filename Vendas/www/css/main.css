@@ -1,0 +1,46 @@
+body{
+	background: #FF6347;
+	font-family: "calibri";
+}
+body h1{
+	color: white;
+	font-size: 7em;
+	margin: 40vw 30vw 0 20vw;
+	display: block;
+} 
+body h2{
+	font-size: 1.9em;
+	color: white;
+	margin: 10vw 5vw 0 33vw;
+}
+body button.iniciar{
+	padding: 1.5vw 8vw 1.5vw 8vw;
+	margin: 10vw 0 0 33vw;
+	font-size: 1.3em;
+	border: none;
+	border-radius: 0.2em;
+}
+body button.intervalo{
+	padding: 1.5vw 8vw 1.5vw 8vw;
+	margin: 5vw 0 0 18vw;
+	font-size: 1.3em;
+	border: none;
+	border-radius: 0.2em;
+}
+body button.continuar{
+	padding: 1.5vw 8vw 1.5vw 8vw;
+	margin: 5vw 0 0 27vw;
+	font-size: 1.3em;
+	border: none;
+	border-radius: 0.2em;
+}
+body button.parar{
+	padding: 1.5vw 8vw 1.5vw 8vw;
+	margin: 5vw 0 0 33vw;
+	font-size: 1.3em;
+	border: none;
+	border-radius: 0.2em;
+}
+.mensagem{
+	display: none;
+}
