@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Vendas</title>
+  <title>pagamento</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="author" content="">
@@ -11,50 +11,82 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-		<title> Vendas </title>
-	<section>
-		<form class="principal" method="get" action="#">
-			<legend> Vendas: </legend>
-		</br>
+		<title> INGRESSO</title>
 
-			<label for="Produto">Produto: </label>
-			<input type="text" name="produto" id="produto">
+<form method="get">
+		<legend>PAGAMENTO DO INGRESSO - Rock in rio </legend>
 
-			<label for="preco">Preço: </label>
-			<input type="text" name="preco" id="preco">
+		<label>Valor:
+			<input type="text" name="valor" id="valor">
+		</label>
 
-			<label for="cliente">Cliente: </label>
-			<input type="text" name="cliente" id="cliente">
+		<label>Quantidade:
+			<input type="text" name="quantidade" id="quantidade" class="quantidade">
+		</label>
 
-			<label for="vendedor">Vendedor: </label>
-			<input type="text" name="vendedor" id="vendedor">
+		<label>Tipo:
+			<select id="tipo" class="tipo">
+				<option value="1"> Inteira </option>
+				<option value="2"> Meia </option>
+			 </select>
+		</label>
 
-			<input class="ok" type="submit" value="OK">
-		</form>
+		<label>Dia:
+			<select id="dia" class="dia">
+				<option value="1"> 1° dia </option>
+				<option value="2"> 2° dia  </option>
+				<option value="2"> 2° dia  </option>
 
-		<div class="mensagem">
- 			<ul>
- 				<li>Produto: </li>
- 				<li>Preço: </li>
- 				<li>Cliente: </li>
- 				<li>Vendedor: </li>
- 			</ul>
- 			<input class="confirmar" type="submit" value="Confirmar">
- 		</div>
-	</section>
+			 </select>
+		</label>
+
+		<button type="button" class="enviar"> ENVIAR </button>
+
+	</form>
+
+	<div class="mensagem">
+		
+
+	</div>
+ 
+
+
+
+	
 <script src="js/jquery-3.3.1.min.js"></script>
 <script> 
 
-	botao = $(".ok");
-	mensagem = $(".mensagem");
-	principal = $(".principal");
+	enviar = $(".enviar");
+valor = $("#valor"); /*jogo da velha é pra ID*/
+quantidade = $("#quantidade");
+tipo = $("#tipo");
+mensagem = $(".mensagem");
 
-	botao.on("click", function(){
-		mensagem.show();
-		principal.hide();
+
+	enviar.on("click", function(){
+		console.log("foi");
+
+		var valor_atual = valor.val();/*pegar valor de formulario*/
+		var quantidade_atual = quantidade.val();
+		var tipo_atual = tipo.val();
+		console.log(valor_atual, quantidade_atual, tipo_atual);
+
+		var preco_ingresso = 80;
+
+		if (tipo_atual == 1) {
+			var total = parseInt(quantidade_atual) * preco_ingresso;
+
+		}else{
+			var total = parseInt(quantidade_atual) * (preco_ingresso / 2);
+		}
+
+			var troco = parseInt(valor_atual) - total;
+
+			mensagem.text("Valor Total será de: R$ " +total+ ". Troco: R$" +troco)
 
 	});
 
+	
 
 
 </script>
